@@ -1,0 +1,3 @@
+﻿  3.1-3.cpp
+D:\Users\Owner\source\repos\Redmoonwow\Hokanko\演習\3.1-3\3.1-3.cpp(52): warning C4101: 'pointer': ローカル変数は 1 度も使われていません。
+  3.1-3.vcxproj -> D:\Users\Owner\source\repos\Redmoonwow\Hokanko\演習\3.1-3\Debug\3.1-3.exe
