@@ -4,37 +4,56 @@
 #include <iostream>
 
 
-#define SIZE 10
+#define SIZE 27
+
 class stack {
 private:
-	char stack[SIZE];
+	char stck[SIZE];
 	int tos;
 public:
-	void init() {
+	stack() {
+		int cnt = 0;
 		tos = 0;
+		for (; cnt <= SIZE; cnt++) {
+			stck[cnt] = 0;
+		}
 	}
 	void push(char ch) {
 		if (tos == SIZE) {
 			std::cout << "スタックは一杯です";
 			return;
 		}
-		stack[tos] = ch;
+		stck[tos] = ch;
 		tos++;
 	}
 
 	char pop() {
-		if (tos = 0) {
+		if (tos == 0) {
 			std::cout << "スタックは空です";
 			return 0;
 		}
 		tos--;
-		return stack[tos];
+		return stck[tos];
 	}
+
+	friend void loadstack(stack *obj);
 };
+
+void loadstack(stack *obj) {
+	char i;
+	int cnt = 0;
+	for (i = 'a'; i <= 'z'; i++) {
+		obj -> stck[cnt] = i;
+		cnt++;
+	}
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	stack obj;
+	loadstack(&obj);
+	return 0;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
