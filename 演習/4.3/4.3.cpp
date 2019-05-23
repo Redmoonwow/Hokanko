@@ -3,11 +3,25 @@
 
 #include <iostream>
 
-int main()
+class myclass {
+	int a, b;
+public:
+	myclass(int n, int m) { a = n; b = m; }
+	int add() { return a + b; }
+	void show();
+};
+
+void myclass::show()
 {
-    std::cout << "Hello World!\n";
+	std::cout << this -> add() << "\n";
 }
 
+int main()
+{
+	myclass ob(10, 14);
+	ob.show();
+	return 0;
+}
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
 // プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
 
