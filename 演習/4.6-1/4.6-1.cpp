@@ -9,8 +9,8 @@ class strtype {
 public:
 	strtype() {
 		int cnt;
-		p = new char[100];
-		for (cnt = 0; cnt >= 99; cnt++) {
+		p = new char[10];
+		for (cnt = 0; cnt <= 9; cnt++) {
 			p[cnt] = 0;
 		}
 	}
@@ -18,9 +18,13 @@ public:
 	strtype(char c,int byte) {
 		int cnt;
 		p = new char[byte];
-		for (cnt = 0; cnt >= byte-1; cnt++) {
+		for (cnt = 0; cnt <= byte-1; cnt++) {
 			p[cnt] = c;
 		}
+	}
+
+	~strtype() {
+		delete[] p;
 	}
 
 	char* getstring() { return p; }
@@ -29,10 +33,8 @@ public:
 
 int main()
 {
-	strtype 
-	long int i = 4;
-	mag(i, 2);
-	std::cout << i;
+	strtype obj('a',10);
+	std::cout << obj.getstring();
 	return 0;
 }
 
